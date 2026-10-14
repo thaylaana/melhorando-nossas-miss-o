@@ -172,4 +172,37 @@ function mostraResultado() {
     textoResultado.textContent = resultado;
 }
 
+
+const afirmacoes = [
+"A inteligência artificial pode ajudar os alunos.",
+"A tecnologia facilita algumas tarefas escolares.",
+"Os estudantes precisam verificar as informações.",
+"A criatividade humana é muito importante.",
+"A tecnologia deve ser utilizada com responsabilidade."
+];
+
+let historiaFinal = "";
+
+function aleatorio(lista) {
+const posicao = Math.floor(
+Math.random() * lista.length
+);
+
+return lista[posicao];
+}
+
+function respostaSelecionada() {
+const afirmacaoEscolhida = aleatorio(afirmacoes);
+
+historiaFinal += afirmacaoEscolhida + " ";
+
+document.getElementById("pergunta").textContent =
+"Afirmação adicionada! Escolha novamente ou veja sua história.";
+}
+
+function mostrarResultado() {
+document.getElementById("resultado").textContent =
+historiaFinal || "Você ainda não adicionou afirmações.";
+}
+
 mostraPergunta();
